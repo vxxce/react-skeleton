@@ -2,111 +2,75 @@
   background-color: #282828;
   color: #ebeae9;
   font-family: Helvetica, Arial, sans-serif;
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  margin: 0;
+  padding: 0;
+}
+
+div#root {
+  height: 100vh;
+  width: 100%;
   font-size: 1.5rem;
-  padding: 2rem;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-  z-index: 1;
-  font-size: 5rem;
-  position: relative;
-  top: 40vh;
   display: inline;
-  color: #947678;
+  position: relative;
+  top: calc(50vh - 50px);
+  z-index: 0;
+  color: #a08486;
+  font-size: 5rem;
 }
 
 h1:hover {
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
-.ball {
-  z-index: 0;
+.time-is-a-flat-circle {
   position: absolute;
-  height: 200px;
-  width: 200px;
-  bottom: 42vh;
+  bottom: calc(50vh - 50px);
+  left: calc(50vw - 50px);
+  height: 100px;
+  width: 100px;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
   background-color: #ebeae9;
-  border-radius: 200px;
-  animation: roller 7s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-radius: 100px;
+  animation: roller 7000ms linear infinite;
 }
 
 @keyframes roller {
-  0% {
-    height: 200px;
-    width: 200px;
-    left: 10vw;
-    transform: rotateY(40deg);
-  }
-
-  25% {
-    height: 225px;
-    width: 225px;
-  }
-
-  50% {
-    height: 200px;
-    width: 200px;
-    left: calc(90vw - 200px);
-    transform: rotateY(160deg);
-  }
-
-  75% {
-    height: 225px;
-    width: 225px;
-  }
-
-  100% {
-    height: 200px;
-    width: 200px;
-    left: 10vw;
-    transform: rotateY(40deg);
-  }
+  from { transform: rotate(0deg) translateX(30vw); }
+  to { transform: rotate(360deg) translateX(30vw); }
 }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 4rem;
+@media (max-width: 500px) {
+
+  h1 { font-size: 14vw; }
+  
+  .time-is-a-flat-circle {
+    bottom: calc(50vh);
+    left: calc(50% - 35px);
+    height: 70px;
+    width: 70px;
+    border-radius: 80px;
+    animation: roller-mobile 7000ms linear infinite;
   }
-  .ball {
-    height: 100px;
-    width: 100px;
-    border-radius: 120px;
-  }
 
-  @keyframes roller {
-    0% {
-      height: 100px;
-      width: 100px;
-      left: 10vw;
-      transform: rotateY(40deg);
-    }
-
-    25% {
-      height: 120px;
-      width: 120px;
-    }
-
-    50% {
-      height: 100px;
-      width: 100px;
-      left: calc(90vw - 100px);
-      transform: rotateY(160deg);
-    }
-
-    75% {
-      height: 120px;
-      width: 120px;
-    }
-
-    100% {
-      height: 100px;
-      width: 100px;
-      left: 10vw;
-      transform: rotateY(40deg);
-    }
+  @keyframes roller-mobile {
+    from { transform: rotate(0deg) translateX(100px); }
+    to { transform: rotate(360deg) translateX(100px); }
   }
 }

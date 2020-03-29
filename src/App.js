@@ -7,18 +7,18 @@ const Something = ({aProp}) => {
 }
 
 const App = () => {
-  const [h1, setH1] = useState("Boiler & Plate")
+  const [h1, setH1] = useState("SKELETON")
 
   const does = () => {
-    h1 === "Boiler & Plate"
-      ? setH1("Plate & Boiler")
-      : setH1("Boiler & Plate")
+    h1 === "SKELETON"
+      ? setH1("NOTELEKS")
+      : setH1("SKELETON")
   }
   
   return (
     <>
       <h1 onClick={does}>{h1}</h1>
-      <div className="ball"></div>
+      <div className="time-is-a-flat-circle"></div>
       <Something aProp={"some data"} />
     </>
   )
