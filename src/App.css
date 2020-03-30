@@ -52,8 +52,8 @@ h1:hover {
 }
 
 @keyframes roller {
-  from { transform: rotate(0deg) translateX(30vw); }
-  to { transform: rotate(360deg) translateX(30vw); }
+  from { transform: rotate(0deg) translateX(35vh); }
+  to { transform: rotate(360deg) translateX(35vh); }
 }
 
 @media (max-width: 500px) {
@@ -70,7 +70,7 @@ h1:hover {
   }
 
   @keyframes roller-mobile {
-    from { transform: rotate(0deg) translateX(100px); }
-    to { transform: rotate(360deg) translateX(100px); }
+    from { transform: rotate(0deg) translateX(30vw); }
+    to { transform: rotate(360deg) translateX(30vw); }
   }
 }
